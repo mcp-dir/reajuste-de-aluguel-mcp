@@ -1,0 +1,36 @@
+# Smithery configuration for Reajuste de Aluguel
+# Schema: https://smithery.ai/docs/build/project-config
+# Remote HTTP MCP — server hosted at https://api.mcp.ai/p_reajuste-de-aluguel
+
+name: reajuste-de-aluguel-mcp
+displayName: "Reajuste de Aluguel"
+description: >
+  **Reajuste de aluguel** para IA. Aplique o índice do contrato (IGP-M, IPCA, INPC) sobre o valor atual e chegue no aluguel corrigido, com o acumulado do período. Índices ao vivo, sem login.
+
+version: 0.1.0
+license: MIT
+homepage: https://github.com/mcp-dir/reajuste-de-aluguel-mcp
+repository: https://github.com/mcp-dir/reajuste-de-aluguel-mcp
+
+tags:
+  - juridico
+  - legal
+  - aluguel
+  - reajuste
+  - igp-m
+  - brazil
+  - read-only
+
+# Remote HTTP MCP — sem startCommand local (servidor já hospedado)
+startCommand:
+  type: http
+  url: https://api.mcp.ai/p_reajuste-de-aluguel
+
+auth:
+  type: oauth2
+  resourceMetadataUrl: https://api.mcp.ai/p_reajuste-de-aluguel/.well-known/oauth-protected-resource
+  fallback:
+    type: agent-auth
+    description: >
+      Para clientes sem OAuth 2.1. O agente expõe uma tool authenticate(token).
+      Usuário gera o JWT em https://app.mcp.ai/agent-auth e cola no chat.

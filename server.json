@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.mcp-dir/reajuste-de-aluguel-mcp",
+  "title": "Reajuste de Aluguel",
+  "description": "Rent adjustment for AI: apply the contract index (IGP-M, IPCA, INPC) to the current rent and get the",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/mcp-dir/reajuste-de-aluguel-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.mcp.ai/p_reajuste-de-aluguel"
+    }
+  ]
+}
